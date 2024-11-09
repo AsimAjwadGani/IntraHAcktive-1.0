@@ -1,7 +1,12 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
+    const handleDetails = (name) => {
+        navigate(`${name}/details`);
+    }
     return (
         <div className='bg-blue-900'>
             <Navbar></Navbar>
@@ -59,7 +64,7 @@ const Home = () => {
                     <h2 className="card-title">BUCC</h2>
                     <p>A community for tech enthusiasts from BRAC University, where we explore the latest advancements in computer science and technology.</p>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-primary">See more</button>
+                    <button className="btn btn-primary" onClick={() => handleDetails("bucc")}>See more</button>
                     </div>
                 </div>
                 </div>
