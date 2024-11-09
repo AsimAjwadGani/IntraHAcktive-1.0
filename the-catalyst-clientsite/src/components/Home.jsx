@@ -146,6 +146,124 @@ One of the prestigious clubs in Bangladesh
             </div>
 
             <div className='pt-12'>
+
+<div className='flex justify-around py-9'>
+            <div className='rounded-lg  w-80 ml-10'>
+                <div className='bg-blue-800 p-0 h-11 text-center items-center rounded-tr-badge '>
+                    <h2 className='text-3xl text-blue-50 '>CLUB NEWS</h2>
+                </div>
+                    <div className='bg-blue-300 w-80 p-5  '>
+                        <div className='bg-blue-400 p-2 my-2'>
+                        <p>Title: Lorem ipsum dolor sit amet.</p>
+                        <h1>Date: 13.01.2024</h1>
+                        </div>
+                        <div className='bg-blue-400 p-2 my-2'>
+                        <p>Title: Lorem ipsum dolor sit amet.</p>
+                        <h1>Date: 13.01.2024</h1>
+                        </div>
+                        <div className='bg-blue-400 p-2 my-2'>
+                        <p>Title: Lorem ipsum dolor sit amet.</p>
+                        <h1>Date: 13.01.2024</h1>
+                        </div>
+                        <div className='bg-blue-400 p-2 my-2'>
+                        <p>Title: Lorem ipsum dolor sit amet.</p>
+                        <h1>Date: 13.01.2024</h1>
+                        </div>
+                        <div className='bg-blue-400 p-2 my-2'>
+                    <p>Title: Lorem ipsum dolor sit amet.</p>
+                    <h1>Date: 13.01.2024</h1>
+                        </div>
+                    </div>
+            </div>
+            <div className='w-[800px]'>
+
+                <div className=''> 
+                    <div className='bg-blue-800 p-0 h-11 text-center items-center  '>
+                        <h2 className='text-3xl text-blue-50 '>Event Calender</h2>
+                    </div>
+                      
+                    <div className='grid grid-cols-2'>
+
+                        
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>Dates</h1>
+        </div>
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>Events</h1>
+        </div>
+        
+
+
+                    </div>
+                    <div className='grid grid-cols-2'>
+
+
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>13/09/2024</h1>
+        </div>
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>BUCC hackathon final day</h1>
+        </div>
+        
+
+
+                    </div>
+                    <div className='grid grid-cols-2'>
+
+
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>14/09/2024</h1>
+        </div>
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>ROBU freshers day</h1>
+        </div>
+        
+
+
+                    </div>
+                    <div className='grid grid-cols-2'>
+
+
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>17/09/2024</h1>
+        </div>
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>BUCUC Flashmob</h1>
+        </div>
+        
+
+
+                    </div>
+                    <div className='grid grid-cols-2'>
+
+
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>19/09/2024</h1>
+        </div>
+        <div className='bg-blue-400 p-2 my-2 pl-10'>
+                
+                <h1>BUCUC presents CP competiton</h1>
+        </div>
+        
+
+
+                    </div>
+                </div>
+
+            </div>
+</div>
+
+
+
             <footer className="footer bg-neutral text-neutral-content p-10">
             <aside>
                 <svg
