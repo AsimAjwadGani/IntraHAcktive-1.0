@@ -91,3 +91,44 @@
   <li>Database: MongoDB serves as the database, storing data on events, room bookings, budget requests, users, and analytics.</li>
   <li>Real-Time Communication: WebSockets are implemented to handle real-time messaging for the chat and notification systems, ensuring prompt communication and updates.</li>
 </ul>
+
+<p><b>Using The System:</b></p>
+<ul>
+  <li>Login: Access via the login button on the homepage; different views are provided for club panel members and OCA admins.</li>
+  <li>
+    Navigation:<br>
+    <ul>
+      <li>Club Panel Members: Access features like room booking, event creation, budget tracking, poster location booking, notifications, and communication with OCA.</li>
+      <li>OCA Admin: Approve/reject requests, manage budgets, monitor all club chats, and access analytics for insights on resource usage and performance.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Challenges and Solutions</h3>
+<ul>
+  <li>Real-Time Communication:<br>
+    <ul>
+      <li>Challenge: Implementing real-time messaging for the chat feature without lag.</li>
+      <li>Solution: Utilized WebSockets to create a reliable, responsive messaging system that supports real-time interactions between club members and OCA.</li>
+    </ul>
+  </li>
+  <li>Room Booking Conflicts:<br>
+    <ul>
+      <li>Challenge: Preventing double bookings while ensuring smooth room management.</li>
+      <li>Solution: Created a live room availability system that locks the room upon booking, with immediate feedback for users.</li>
+    </ul>
+  </li>
+  <li>Data Transparency for Budget Requests:<br>
+    <ul>
+      <li>Challenge: Making budget tracking accessible and clear for both club members and OCA.</li>
+      <li>Solution: Developed an editable budgeting table visible to both parties, showing the current status and updates in real-time.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Future Enhancements</h3>
+<ul>
+  <li>Enhanced Data Analytics: Integrate more advanced visualizations and insights to help OCA and clubs make strategic decisions.</li>
+  <li>Mobile Accessibility: Develop a mobile-responsive version or dedicated app to increase accessibility.</li>
+  <li>Feedback Mechanism: Introduce a feedback system for clubs to submit suggestions for feature improvements and report issues.</li>
+</ul>
