@@ -9,6 +9,8 @@ import {
 import Home from './components/Home.jsx';
 import Login from './components/Login.jsx';
 import Details from './components/Details.jsx';
+import OcaDash from './components/OcaDash.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/:name/details",
     element: <Details></Details>
+  },
+  {
+    path: "/ocaDashboard",
+    element: <OcaDash></OcaDash>,
   }
 ]);
 
