@@ -14,6 +14,9 @@ import PanelDash from './components/panelDash.jsx';
 import EventCreation from './components/EventCreation.jsx';
 import MeetingRoomBooking from './components/MeetingRoomBooking.jsx';
 import BudgetPage from './components/BudgetPage.jsx';
+import AdminBudgetPage from './components/AdminBudgetPage.jsx';
+import StudentBudgetPage from './components/StudentBudgetPage.jsx';
+import Analytics from './components/Analytics.jsx';
 
 
 
@@ -26,7 +29,7 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login></Login>,
-    // loader: () => fetch('http://localhost:5000/users')
+    loader: () => fetch('http://localhost:5000/users')
     
   },
   {
@@ -36,6 +39,7 @@ const router = createBrowserRouter([
   {
     path: "/ocaDashboard",
     element: <OcaDash></OcaDash>,
+    loader: () => fetch('http://localhost:5000/event')
   },
   {
     path: "/panel",
@@ -52,6 +56,18 @@ const router = createBrowserRouter([
   {
     path: "/budget",
     element: <BudgetPage></BudgetPage>,
+  },
+  {
+    path: "/budgetOca",
+    element: <AdminBudgetPage></AdminBudgetPage>,
+  },
+  {
+    path: "/budgetPanel",
+    element: <StudentBudgetPage></StudentBudgetPage>,
+  },
+  {
+    path: "/analytics",
+    element: <Analytics></Analytics>,
   },
 
 

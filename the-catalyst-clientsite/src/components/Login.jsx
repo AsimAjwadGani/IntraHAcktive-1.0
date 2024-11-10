@@ -1,30 +1,12 @@
 import React, { useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
-// Mock data for users
-// const [users, setusers] = useState([
-//     { email: 'admin@bracu.com', password: 'admin123', role: 'oca' },
-//     { email: 'bucc@club.bracu.edu', password: 'bucc123', role: 'club' },
-//     { email: 'bucuc@club.bracu.edu', password: 'bucuc123', role: 'club' },
-//     { email: 'robu@club.bracu.edu', password: 'robu123', role: 'club' },
-//     { email: 'budtf@club.bracu.edu', password: 'budtf123', role: 'club' },
-//     { email: 'buac@club.bracu.edu', password: 'buac123', role: 'club' },
-//     { email: 'bizzbee@club.bracu.edu', password: 'bizzbee123', role: 'club' },]);
-const users = [
-  { email: 'admin@gmail.com', password: 'admin123', role: 'oca' },
-  { email: 'bucc@gmail.com', password: 'bucc123', role: 'club' },
-  { email: 'bucuc@club.bracu.edu', password: 'bucuc123', role: 'club' },
-  { email: 'robu@club.bracu.edu', password: 'robu123', role: 'club' },
-  { email: 'budtf@club.bracu.edu', password: 'budtf123', role: 'club' },
-  { email: 'buac@club.bracu.edu', password: 'buac123', role: 'club' },
-  { email: 'bizzbee@club.bracu.edu', password: 'bizzbee123', role: 'club' },
-];
 
 const Login = () => {
 
-    // const loadedUsers = useLoaderData();
-    // const [users, setUsers] = useState(loadedUsers);
-    // console.log(users);
+    const loadedUsers = useLoaderData();
+    const [users, setUsers] = useState(loadedUsers);
+    
     
   const navigate = useNavigate();
   const [email, setEmail] = useState(''); // state for email

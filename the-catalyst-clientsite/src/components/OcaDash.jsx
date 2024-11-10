@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
 
 const OcaDash = () => {
+    const loadedUsers = useLoaderData();
+    const [events, setEvents] = useState(loadedUsers);
+    console.log(events);
+    
 
     const navigate = useNavigate();
     const handleLogout = () => {
         // Clear any user-related data here if needed
         navigate('/'); // Redirect to the home page
       };
+    const handleBudget = () => {
+        // Clear any user-related data here if needed
+        navigate('/budgetPanel'); // Redirect to the home page
+      };
+    const handleAna = () => {
+        // Clear any user-related data here if needed
+        navigate('/analytics'); // Redirect to the home page
+      };
+      
+      
 
-
-    const [events, setEvents] = useState([
-        { id: 1, title: 'Robotics Club Workshop', date: '12.01.2024', details: 'Join us for an introductory robotics workshop covering fundamentals of automation and AI.' },
-        { id: 2, title: 'Cultural Club - Annual Drama Night', date: '20.01.2024', details: 'An evening of performances highlighting the diversity of culture at BRACU. Don’t miss it!' },
-        { id: 3, title: 'Adventure Club - Weekend Hiking', date: '22.01.2024', details: 'Get ready for a thrilling hike in the mountains. Bring your gear and adventurous spirit!' },
-        { id: 4, title: 'Computer Club - 24-Hour Hackathon', date: '25.01.2024', details: 'Participate in a hackathon, solve real-world problems, and collaborate with fellow students.' },
-        { id: 5, title: 'Robotics Club - AI and Robotics Talk', date: '28.01.2024', details: 'Join us for a tech talk featuring AI experts discussing future trends in robotics.' }
-    ]);
+    // const [events, setEvents] = useState([
+    //     { id: 1, title: 'Robotics Club Workshop', date: '12.01.2024', details: 'Join us for an introductory robotics workshop covering fundamentals of automation and AI.' },
+    //     { id: 2, title: 'Cultural Club - Annual Drama Night', date: '20.01.2024', details: 'An evening of performances highlighting the diversity of culture at BRACU. Don’t miss it!' },
+    //     { id: 3, title: 'Adventure Club - Weekend Hiking', date: '22.01.2024', details: 'Get ready for a thrilling hike in the mountains. Bring your gear and adventurous spirit!' },
+    //     { id: 4, title: 'Computer Club - 24-Hour Hackathon', date: '25.01.2024', details: 'Participate in a hackathon, solve real-world problems, and collaborate with fellow students.' },
+    //     { id: 5, title: 'Robotics Club - AI and Robotics Talk', date: '28.01.2024', details: 'Join us for a tech talk featuring AI experts discussing future trends in robotics.' }
+    // ]);
 
     const [rooms, setRooms] = useState([
         { id: 1, title: 'Room 301 - Robotics Workshop Booking', date: '12.01.2024', details: 'Reserved for Robotics Club’s introductory workshop.' },
@@ -49,6 +62,7 @@ const OcaDash = () => {
                     <div>
                         <h1 className='pt-2 text-5xl text-blue-100'>BRACU OCA Dashboard</h1>
                     </div>
+                    
                     <div className='btn bg-orange-300' onClick={handleLogout} >Logout</div>
                 </div>
             </div>
@@ -142,7 +156,7 @@ const OcaDash = () => {
             </div>
 
 
-            <div className='m-5 mx-10 flex gap-10 mb-56'>
+            <div className='m-5 mx-10 flex gap-10 mb-20'>
                 <div className='bg-gray-200 shadow-lg rounded-lg overflow-hidden w-full md:w-80 mt-8 p-4'>
         <h2 className='text-center text-2xl font-semibold text-gray-700 mb-4'>Budget Management</h2>
         <div className='bg-gray-100 rounded-lg p-4'>
@@ -208,6 +222,10 @@ const OcaDash = () => {
                 </div>
 
 
+            </div>
+            <div className='flex items-center justify-center gap-6'>
+            <div className='btn bg-orange-300 w-[500px]  mb-20' onClick={handleBudget}  >Budget Tracker</div>
+            <div className='btn bg-orange-300 w-[500px]  mb-20' onClick={handleAna}  >Analytics</div>
             </div>
 
             {/* Modal */}
