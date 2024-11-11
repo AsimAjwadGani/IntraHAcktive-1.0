@@ -3,7 +3,7 @@ import { Bar, Pie } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
 
 const Analytics = () => {
-    // Sample raw data
+    // Sample data for charts
     const eventAttendanceData = [
         { eventName: 'Robotics Workshop', attendance: 150 },
         { eventName: 'Drama Night', attendance: 200 },
@@ -28,7 +28,7 @@ const Analytics = () => {
         { location: 'Cafeteria', totalPosters: 4 },
     ];
 
-    // Compact chart options
+    // Chart options
     const compactChartOptions = {
         maintainAspectRatio: false,
         responsive: true,
@@ -42,19 +42,7 @@ const Analytics = () => {
         },
     };
 
-    // Event Attendance Chart Data
-    const eventAttendanceChartData = {
-        labels: eventAttendanceData.map(event => event.eventName),
-        datasets: [
-            {
-                label: 'Attendance',
-                data: eventAttendanceData.map(event => event.attendance),
-                backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            },
-        ],
-    };
-
-    // Budget Data Chart Data
+    // Chart data configurations
     const budgetChartData = {
         labels: budgetData.map(budget => budget.category),
         datasets: [
@@ -71,7 +59,6 @@ const Analytics = () => {
         ],
     };
 
-    // Room Usage Chart Data
     const roomUsageChartData = {
         labels: roomUsageData.map(room => room.roomName),
         datasets: [
@@ -83,7 +70,6 @@ const Analytics = () => {
         ],
     };
 
-    // Poster Location Usage Chart Data
     const posterLocationChartData = {
         labels: posterLocationData.map(location => location.location),
         datasets: [
@@ -99,8 +85,19 @@ const Analytics = () => {
         ],
     };
 
-    // Set fixed dimensions for charts
-    const chartDimensions = { width: 200, height: 200 };
+    // Refs for charts to handle cleanup on unmount
+    const budgetChartRef = useRef(null);
+    const roomUsageChartRef = useRef(null);
+    const posterLocationChartRef = useRef(null);
+
+    useEffect(() => {
+        // Cleanup function to destroy chart instances on unmount
+        return () => {
+            if (budgetChartRef.current) budgetChartRef.current.destroy();
+            if (roomUsageChartRef.current) roomUsageChartRef.current.destroy();
+            if (posterLocationChartRef.current) posterLocationChartRef.current.destroy();
+        };
+    }, []);
 
     return (
         <div className="p-5 flex gap-20">
@@ -108,34 +105,39 @@ const Analytics = () => {
 
             <div>
                 {/* Budget Data Bar Chart */}
-            <div className="mb-8" style={chartDimensions}>
-                <h3 className="text-lg font-semibold text-blue-700 mb-2">Budget Data</h3>
-                <Bar data={budgetChartData} options={compactChartOptions} />
+                <div className="mb-8" style={{ width: 200, height: 200 }}>
+                    <h3 className="text-lg font-semibold text-blue-700 mb-2">Budget Data</h3>
+                    <Bar
+                        ref={budgetChartRef}
+                        data={budgetChartData}
+                        options={compactChartOptions}
+                    />
+                </div>
             </div>
-            </div>
+
             <div>
-{/* Room Usage Bar Chart */}
-<div className="mb-8" style={chartDimensions}>
-                <h3 className="text-lg font-semibold text-blue-700 mb-2">Room Usage</h3>
-                <Bar data={roomUsageChartData} options={compactChartOptions} />
+                {/* Room Usage Bar Chart */}
+                <div className="mb-8" style={{ width: 200, height: 200 }}>
+                    <h3 className="text-lg font-semibold text-blue-700 mb-2">Room Usage</h3>
+                    <Bar
+                        ref={roomUsageChartRef}
+                        data={roomUsageChartData}
+                        options={compactChartOptions}
+                    />
+                </div>
             </div>
-            </div>
+
             <div>
-{/* Poster Location Usage Pie Chart */}
-<div className="mb-8" style={chartDimensions}>
-                <h3 className="text-lg font-semibold text-blue-700 mb-2">Poster Location Usage</h3>
-                <Pie data={posterLocationChartData} options={compactChartOptions} />
+                {/* Poster Location Usage Pie Chart */}
+                <div className="mb-8" style={{ width: 200, height: 200 }}>
+                    <h3 className="text-lg font-semibold text-blue-700 mb-2">Poster Location Usage</h3>
+                    <Pie
+                        ref={posterLocationChartRef}
+                        data={posterLocationChartData}
+                        options={compactChartOptions}
+                    />
+                </div>
             </div>
-            </div>
-            <div>
-
-            </div>
-
-            
-
-            
-
-            
         </div>
     );
 };
